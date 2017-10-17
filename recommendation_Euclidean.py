@@ -17,6 +17,7 @@ def similar_taste (prefs, person_1, person_2):
 			similar_movie[movie] = 1
 	
 	# there is no movie, return 0
+	# it check this condition first, if True, the below 'return' will not be executed
 	if len(similar_movie) == 0:
 		return 0
 	
