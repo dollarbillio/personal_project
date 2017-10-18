@@ -68,13 +68,13 @@ def topMatches(data, p1, similarity = pearson_corrcoef):
 	# similarity can now be a function as pearson_corrcoef
     
 	scores = [(similarity(data, p1, other), other) for other in data if other != p1]
-    while True:
-        n = int(input("How many top match do you want to display? "))
-        if n > len (scores):
-            print("Out of range please try again!")
-        else:
-            break
-    scores.sort(reverse = True)
-    return scores[0:n]
+	while True:
+		n = int(input("How many top match do you want to display? "))
+		if n > len (scores):
+			print("Out of range please try again!")
+		else:
+			break
+	scores.sort(reverse = True)
+	return scores[0:n]
 	
 
