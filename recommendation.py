@@ -109,7 +109,8 @@ def unseen_movies(data, person, similarity):
 				total_sim_score[movie] += sim_score
 	# Calculating score for each movie
 	final_score = [(total / total_sim_score[movie]) for movie, total in total_score.items()]
-	return final_score.sort(reverse = True)
+	final_score.sort(reverse = True)
+	return final_score
 	
 	
 
