@@ -59,6 +59,23 @@ def pearson_corrcoef(data, p1, p2):
 	denom = sqrt((n * sumSq1 - pow(sum1, 2)) * (n * sumSq2 - pow(sum2, 2)))
 	
 	return nom/demon
-	
+=========================================================================================================================================
+# RETURN THE WHOLE LIST WITH SIMILARITY POINT
+# THEORY: return a list with each element being a tuple containing a similarity point (depending on which function choosen from above)
+ # and the each person's name
+
+def topMatches(data, p1, similarity = pearson_corrcoef):
+	# similarity can now be a function as pearson_corrcoef
+    
+	scores = [(similarity(data, p1, other), other) for other in data 
+			  										if other != p1]
+    while True:
+        n = int(input("How many top match do you want to display? "))
+        if n > len (scores):
+            print("Out of range please try again!")
+        else:
+            break
+    scores.sort(reverse = True)
+    return scores[0:n]
 	
 
