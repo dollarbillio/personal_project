@@ -33,7 +33,7 @@ def most_often_words(freq_dict):
 							
 		if curr_analysis[1] >= pref:
 			# add the whole array to the result
-			list_of_words.append(curr_analysis)	# add the whole array to the result
+			list_of_words.append(curr_analysis)	
 			for w in curr_analysis[0]:
 				# directly mutate the freq_dict for the next loop
 				del(freq_dict[w])	 
